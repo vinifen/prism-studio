@@ -8,11 +8,12 @@ For the backend, I'm using my [MarketCore API](https://github.com/vinifen/market
 
 ### 🔧 Core Functionalities
 
-- Mobile user authentication and registration
-- Product catalog browsing with categories
-- Shopping cart management
-- User profile management
-- Order history and tracking
+- [ ] User authentication and registration
+- [ ] Product catalog browsing with categories
+- [ ] Shopping cart management
+- [ ] User profile management
+- [ ] Order logic
+- [ ] Product search functionality
 
 ## 🖼️ Screen Prototypes
 
