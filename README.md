@@ -16,7 +16,7 @@ For the backend, I'm using my [MarketCore API](https://github.com/vinifen/market
 
 ## 🖼️ Screen Prototypes
 
-The complete UI/UX design and interactive prototypes for Prism Studio have been created using Figma. The design includes all major user flows, from browsing products to completing purchases, as well as admin interfaces for managing the platform.
+I've created some basic prototypes for Prism Studio using Figma. These include the main screens and user flows for the core features of the app.
 
 **🎨 [View Interactive Prototypes on Figma](https://www.figma.com/design/cYCcxlyUv4ehb6Ceu7HizX/Prism-Studio?node-id=0-1&t=a3W722V6ZGykatyB-1)**
 
@@ -24,7 +24,7 @@ The complete UI/UX design and interactive prototypes for Prism Studio have been 
 
 ## 🗄️ Database Modeling
 
-The database architecture for Prism Studio follows a relational model designed to efficiently handle e-commerce operations, user management, and product catalog organization. The schema supports scalable operations and maintains data integrity across all platform features.
+This is the database schema from my MarketCore API backend that Prism Studio will be using. It's a standard e-commerce database with all the necessary tables for products, users, orders, and cart management.
 
 ![View Database Schema](https://github.com/vinifen/prism-studio/blob/main/backend/docs/database/marketcore-api-dbdiagram-io.png)
 
