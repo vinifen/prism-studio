@@ -2,9 +2,9 @@
 
 ## 📱 About the App
 
-Prism Studio is a comprehensive e-commerce mobile application specialized in art supplies, designed to provide artists and creative professionals with a seamless shopping experience. The platform aims to be the go-to mobile destination for purchasing high-quality art materials, from basic supplies to professional-grade equipment.
+Prism Studio is an e-commerce mobile app for art supplies that I'm building to improve my React Native skills and create something cool! The idea is to make a simple and fun platform where artists can browse and buy art materials.
 
-The backend API is already fully developed and tested, providing a robust foundation for the mobile application. The current focus is on developing a React Native mobile application that will consume the existing API services.
+For the backend, I'm using my [MarketCore API](https://github.com/vinifen/marketcore-api) project, which is a standard e-commerce API. Now I'm focusing on building the React Native mobile app that will connect to this API.
 
 ### 🔧 Core Functionalities
 
@@ -101,7 +101,7 @@ The database architecture for Prism Studio follows a relational model designed t
 
 
 ### 🚀 Backend API
-The backend API is already deployed and running. API documentation is available at the Swagger endpoint. The mobile app will connect to the existing API services for all data operations.
+The backend API is finished. API documentation is available at the Swagger endpoint. The mobile app will connect to the existing API services for all data operations.
 
 ## 🤝 Contributing
 
