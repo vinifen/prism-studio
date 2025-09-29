@@ -1,10 +1,10 @@
 # 🎨 Prism Studio
 
-## 📱 About the App
+## 📱 About the project
 
-Prism Studio is an e-commerce mobile app for art supplies that I'm building to improve my React Native skills and create something cool! The idea is to make a simple and fun platform where artists can browse and buy art materials.
+Prism Studio is an e-commerce project for art supplies that I'm building to improve my React Native skills and create something cool! The idea is to make a simple and fun platform where artists can browse and buy art materials.
 
-For the backend, I'm using my [MarketCore API](https://github.com/vinifen/marketcore-api) project, which is a standard e-commerce API. Now I'm focusing on building the React Native mobile app that will connect to this API.
+For the backend, I'm using my [MarketCore API](https://github.com/vinifen/marketcore-api) project, which is a standard e-commerce API. Now I'm focusing on building the React Native project that will connect to this API.
 
 ### 🔧 Core Functionalities
 
@@ -17,7 +17,7 @@ For the backend, I'm using my [MarketCore API](https://github.com/vinifen/market
 
 ## 🖼️ Screen Prototypes
 
-I've created some basic prototypes for Prism Studio using Figma. These include the main screens and user flows for the core features of the app.
+I've created some basic prototypes for Prism Studio using Figma. These include the main screens and user flows for the core features of the project.
 
 **🎨 [View Interactive Prototypes on Figma](https://www.figma.com/design/cYCcxlyUv4ehb6Ceu7HizX/Prism-Studio?node-id=0-1&t=a3W722V6ZGykatyB-1)**
 
@@ -102,7 +102,7 @@ This is the database schema from my MarketCore API backend that Prism Studio wil
 
 
 ### 🚀 Backend API
-The backend API is finished. API documentation is available at the Swagger endpoint. The mobile app will connect to the existing API services for all data operations.
+The backend API is finished. API documentation is available at the Swagger endpoint. The front-end will connect to the existing API services for all data operations.
 
 ## 🤝 Contributing
 
