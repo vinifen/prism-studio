@@ -1,34 +1,39 @@
 {
   "expo": {
-    "scheme": "prism-studio",
     "name": "prism-studio",
     "slug": "prism-studio",
     "version": "1.0.0",
     "orientation": "portrait",
-  "icon": "./assets/prism-studio.png",
-  "userInterfaceStyle": "light",
+    "icon": "./assets/images/prism-studio.png",
+    "scheme": "prismstudio",
+    "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/prism-studio.png",
+      "image": "./assets/images/prism-studio.png",
       "resizeMode": "contain",
-      "backgroundColor": "#000000"
+      "backgroundColor": "#ffffff"
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/prism-studio.png",
-        "backgroundColor": "#000000"
+        "foregroundImage": "./assets/images/prism-studio.png",
+        "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/prism-studio.png"
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/prism-studio.png"
     },
     "plugins": [
       "expo-router"
-    ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
   }
 }

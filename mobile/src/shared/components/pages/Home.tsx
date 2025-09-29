@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { api } from 'src/api/api';
 import { useState } from 'react';
-import { Text, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
+import { Example } from 'components/ui';
 
 export default function Home() {
 
@@ -24,6 +25,8 @@ export default function Home() {
       ) : (
         <Text>Loading...</Text>
       )}
+      <Image source={require("assets/images/prism-studio.png")} style={{ width: 100, height: 100 }} />
+      <Example/>
     </View>
   );
 }

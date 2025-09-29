@@ -4,8 +4,13 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "shared/*": ["src/shared/*"],
-      "assets/*": ["assets/*"]
+      "components/*": ["src/shared/components/*"]
     }
-  }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ]
 }
