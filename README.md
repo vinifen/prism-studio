@@ -27,7 +27,7 @@ I've created some basic prototypes for Prism Studio using Figma. These include t
 
 This is the database schema from my MarketCore API backend that Prism Studio will be using. It's a standard e-commerce database with all the necessary tables for products, users, orders, and cart management.
 
-![View Database Schema](https://github.com/vinifen/prism-studio/blob/main/backend/docs/database/marketcore-api-dbdiagram-io.png)
+![View Database Schema](https://github.com/vinifen/prism-studio/blob/main/api/docs/database/marketcore-api-dbdiagram-io.png)
 
 ### 🏗️ Key Entities:
 - **Users**: Customer and admin account management
