@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import { api } from 'src/api/api';
+import api from 'api/index';
 import { useState } from 'react';
 import { Image, Text, View } from 'react-native';
-import { Example } from 'components/ui';
+import { Example } from 'shared/components/ui';
 
 export default function Home() {
 

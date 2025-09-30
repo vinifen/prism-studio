@@ -1,4 +1,4 @@
 const ip = "your_ip"
-export default ip;
+// export default ip; // <- uncomment to use
 
 // create ip.ts in this folder with same config and your ip to use backend in other device.

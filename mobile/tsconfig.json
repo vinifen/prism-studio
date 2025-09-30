@@ -4,7 +4,10 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "components/*": ["src/shared/components/*"]
+      "api/*": ["src/api/*"],
+      "shared/*": ["src/shared/*"],
+      "app/*": ["src/app/*"],
+      "pages/*": ["src/shared/components/pages/*"]
     }
   },
   "include": [
