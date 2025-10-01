@@ -1,4 +1,4 @@
-import Home from "pages/Home";
+import Home from "shared/components/pages/Home";
 
 export default function _screen() {
   return (

@@ -6,8 +6,7 @@
     "paths": {
       "api/*": ["src/api/*"],
       "shared/*": ["src/shared/*"],
-      "app/*": ["src/app/*"],
-      "pages/*": ["src/shared/components/pages/*"]
+      "app/*": ["src/app/*"]
     }
   },
   "include": [
