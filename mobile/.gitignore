@@ -46,3 +46,7 @@ src/api/ip.ts
 # Vscode
 .vscode/
 
+# Build artifacts
+*.apk
+*.aab
+build-*.apk

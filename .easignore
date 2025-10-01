@@ -1,1 +1,2 @@
+# Exclude API backend from mobile app build (fixes pgdata permission issues)
 /api/

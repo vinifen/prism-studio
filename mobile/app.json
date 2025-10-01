@@ -35,8 +35,18 @@
       "favicon": "./assets/images/prism-studio.png"
     },
     "plugins": [
-      "expo-router"
+
+      "expo-router",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true
+          }
+        }
+      ]
     ],
+
     "experiments": {
       "typedRoutes": true
     },
