@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export default function Example() {
+export default function _screen() {
   return (
     <View>
-      <Text>Example</Text>
+      <Text>Products</Text>
     </View>
   )
 }
