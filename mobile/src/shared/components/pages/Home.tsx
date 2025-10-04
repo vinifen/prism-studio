@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import api from 'api/index';
 import { useState } from 'react';
 import { Image, Text, View, StyleSheet } from 'react-native';
-import GradientText from 'shared/components/ui/GradientText';
+import { GradientText, GradientBorderBox, GradientBackground } from 'shared/components/ui';
 
 export default function Home() {
 
@@ -29,7 +29,15 @@ export default function Home() {
       
       <View style={{ alignSelf: 'center' }}>
         <GradientText style={styles.textStyle}>Hello world</GradientText>
-      </View> 
+      </View>
+      <GradientBorderBox borderRadius={0} padding={10} children={
+        <View style={{alignItems: 'center', backgroundColor: '#fff', padding: 20}}>
+          <Text>Conteúdo dentro da borda com gradiente</Text>
+        </View>
+      } />
+      <GradientBackground borderRadius={15} padding={20}>
+        <Text style={{ color: 'white' }}>Texto com fundo gradiente</Text>
+      </GradientBackground>
     </View>
   );
 }
