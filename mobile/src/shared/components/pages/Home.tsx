@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import api from 'api/index';
 import { useState } from 'react';
 import { Image, Text, View, StyleSheet } from 'react-native';
-import { GradientText, GradientBorderBox, GradientBackground } from 'shared/components/ui';
+import { GradientText, GradientBorderBox, GradientBackground, Div } from 'shared/components/ui';
 
 export default function Home() {
 
@@ -30,14 +30,24 @@ export default function Home() {
       <View style={{ alignSelf: 'center' }}>
         <GradientText style={styles.textStyle}>Hello world</GradientText>
       </View>
-      <GradientBorderBox borderRadius={0} padding={10} children={
-        <View style={{alignItems: 'center', backgroundColor: '#fff', padding: 20}}>
-          <Text>Conteúdo dentro da borda com gradiente</Text>
-        </View>
-      } />
-      <GradientBackground borderRadius={15} padding={20}>
+      <GradientBorderBox
+        width={250}
+        height={130}
+        borderLeftWidth={20}
+        borderTopLeftRadius={20}
+        borderBottomLeftRadius={20}
+        borderWidth={10}
+        backgroundColor="white"
+      >
+        <Text style={{ color: 'black', fontSize: 16 }}>Teste de borda gradiente</Text>
+      </GradientBorderBox>
+      <GradientBackground borderColor='black' borderRightColor='blue' borderRadius={15} borderWidth={5}>
+        <Div><GradientText>Texto com fundo gradiente</GradientText></Div>
         <Text style={{ color: 'white' }}>Texto com fundo gradiente</Text>
       </GradientBackground>
+      <Div backgroundColor='white' borderBottomRightRadius={20} borderColor="blue" padding={10} margin={10} borderRadius={10}>
+        <Text>Conteúdo dentro do Div</Text>
+      </Div>
     </View>
   );
 }
