@@ -3,6 +3,7 @@ import api from 'api/index';
 import { useState } from 'react';
 import { Image, Text, View, StyleSheet } from 'react-native';
 import { GradientText, GradientBorderBox, GradientBackground, Div } from 'shared/components/ui';
+import { H1 } from '../ui/Titles';
 
 export default function Home() {
 
@@ -48,6 +49,7 @@ export default function Home() {
       <Div backgroundColor='white' borderBottomRightRadius={20} borderColor="blue" padding={10} margin={10} borderRadius={10}>
         <Text>Conteúdo dentro do Div</Text>
       </Div>
+      <H1>ASDF</H1>
     </View>
   );
 }
