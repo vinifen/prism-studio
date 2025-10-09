@@ -39,14 +39,3 @@ yarn-error.*
 # generated native folders
 /ios
 /android
-
-# Ip to use backend in other device
-src/api/ip.ts
-
-# Vscode
-.vscode/
-
-# Build artifacts
-*.apk
-*.aab
-build-*.apk

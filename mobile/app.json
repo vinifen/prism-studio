@@ -11,23 +11,20 @@
     "splash": {
       "image": "./assets/images/prism-studio.png",
       "resizeMode": "contain",
-      "backgroundColor": "#000000"
+      "backgroundColor": "#ffffff"
     },
     "ios": {
       "supportsTablet": true,
-      "runtimeVersion": {
-        "policy": "appVersion"
-      }
+      "bundleIdentifier": "com.vinifen.prismstudio"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/prism-studio.png",
-        "backgroundColor": "#000000"
+        "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "package": "com.anonymous.prismstudio",
-      "runtimeVersion": "1.0.0"
+      "package": "com.vinifen.prismstudio"
     },
     "web": {
       "bundler": "metro",
@@ -35,29 +32,10 @@
       "favicon": "./assets/images/prism-studio.png"
     },
     "plugins": [
-
-      "expo-router",
-      [
-        "expo-build-properties",
-        {
-          "android": {
-            "usesCleartextTraffic": true
-          }
-        }
-      ]
+      "expo-router"
     ],
-
     "experiments": {
       "typedRoutes": true
-    },
-    "extra": {
-      "router": {},
-      "eas": {
-        "projectId": "3532975f-8fdb-4ce6-beb3-ee1d7341bc08"
-      }
-    },
-    "updates": {
-      "url": "https://u.expo.dev/3532975f-8fdb-4ce6-beb3-ee1d7341bc08"
     }
   }
 }
