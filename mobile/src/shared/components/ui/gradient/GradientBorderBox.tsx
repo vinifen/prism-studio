@@ -8,6 +8,7 @@ import { MarginProps, ExtractMarginProps } from 'shared/types/styles/MarginTypes
 import { PaddingProps, ExtractPaddingProps } from 'shared/types/styles/PaddingTypes';
 import { BackgroundProps, ExtractBackgroundProps } from 'shared/types/styles/BackgroundTypes';
 import { ReactNode } from 'react';
+import { constants } from 'shared/styles/contants';
 
 type GradientBorderBoxProps = {
   children: ReactNode;
@@ -28,12 +29,12 @@ type GradientBorderBoxProps = {
 export default function GradientBorderBox(props: GradientBorderBoxProps) {
   const { 
     children,
-    borderWidth = 0,
+    borderWidth = 2,
     borderTopWidth,
     borderRightWidth,
     borderBottomWidth,
     borderLeftWidth,
-    borderRadius = 0,
+    borderRadius = constants.DEFAULT_RADIUS,
     borderTopLeftRadius,
     borderTopRightRadius,
     borderBottomLeftRadius,
@@ -92,7 +93,6 @@ export default function GradientBorderBox(props: GradientBorderBoxProps) {
         borderBottomLeftRadius: bottomLeftRadius,
         borderBottomRightRadius: bottomRightRadius,
         ...dimensionProps,
-        ...flexProps,
         ...marginProps,
       }}
     >
@@ -103,11 +103,10 @@ export default function GradientBorderBox(props: GradientBorderBoxProps) {
         borderBottomRightRadius: Math.max(0, bottomRightRadius - Math.max(bottomWidth, rightWidth)),
         ...backgroundProps,
         ...paddingProps,
+        ...flexProps,
         overflow: 'hidden',
         ...(hasFixedDimensions && {
           flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
         }),
       }}>
         {children}

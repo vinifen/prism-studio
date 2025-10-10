@@ -1,4 +1,4 @@
-import { colors } from 'shared/styles/colors';
+import { constants } from 'shared/styles/contants';
 
 export type GradientProps = {
   gradientColors?: string[];
@@ -11,10 +11,10 @@ export function ExtractGradientProps(props: GradientProps) {
   const { gradientColors, gradientLocations, gradientStart, gradientEnd } = props;
   return {
     gradientProps: {
-      gradientColors: gradientColors || colors.gradient.colors,
-      gradientLocations: gradientLocations || colors.gradient.locations,
-      gradientStart: gradientStart || colors.gradient.startTransition,
-      gradientEnd: gradientEnd || colors.gradient.endTransition,
+      gradientColors: gradientColors || constants.colors.gradient.colors,
+      gradientLocations: gradientLocations || constants.colors.gradient.locations,
+      gradientStart: gradientStart || constants.colors.gradient.startTransition,
+      gradientEnd: gradientEnd || constants.colors.gradient.endTransition,
     },
   };
 }
