@@ -4,6 +4,7 @@ import { TextInput, TextInputProps, Text, StyleProp, TextStyle, View, DimensionV
 import { constants } from 'shared/styles/contants';
 import GradientText from './gradient/GradientText';
 import GradientBorderBox from './gradient/GradientBorderBox';
+import Div from './Div';
 
 type DefaultInputType = TextInputProps & {
   control: any;
@@ -109,7 +110,7 @@ export default function FormInput({
         />
       </GradientBorderBox>
       {errors?.[inputName] && (
-        <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: constants.spacing.xs }}>
+        <Div justifyContent="center" alignItems="center" marginTop={constants.spacing.xs}>
           <Text style={{ 
             color: constants.validation.errorPrimary, 
             fontSize: constants.fontSize.xs,
@@ -117,7 +118,7 @@ export default function FormInput({
           }}>
             {errors[inputName].message || 'Campo inválido'}
           </Text>
-        </View>
+        </Div>
       )}
     </View>
   );
