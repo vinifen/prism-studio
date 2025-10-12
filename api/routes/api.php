@@ -21,7 +21,7 @@ Route::get('/', function () {
         'message' => 'Welcome to the Marketcore API',
         'docs' => $_ENV['APP_URL'] . ':' . $_ENV['WEB_SERVER_PORT'] . '/api/documentation',
         'github' => "https://github.com/vinifen/marketcore-api",
-        'version' => '1.0.0',
+        'version' => '1.1.0-modified',
     ], 200);
 })->middleware('throttle:60,1');
 

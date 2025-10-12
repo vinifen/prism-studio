@@ -1,32 +1,47 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
 import api from 'api/index';
 import { useState } from 'react';
-import { Image, Text, View } from 'react-native';
-import { Example } from 'shared/components/ui';
+import { Text, FlatList } from 'react-native';
+import { ProductCard, Div } from 'shared/components/ui';
+import { ProductType } from 'shared/types/ProductTypes';
+import { constants } from 'shared/styles/contants';
 
 export default function Home() {
-
-  const [data, setData] = useState(null);
+  const [products, setProducts] = useState<ProductType[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await api.get('/');
-      setData(response.data);
-      console.log("Data from API:", response.data);
+      try {
+        const response = await api.get('/api/products');
+        setProducts(response.data.data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      } finally {
+        setLoading(false);
+      }
     };
     fetchData();
   }, []);
 
   return (
-    <View>
-      <Text>Home</Text>
-      {data ? (
-        <Text>{JSON.stringify(data, null, 2)}</Text>
+    <Div flex={1} paddingHorizontal={constants.spacing.md} backgroundColor={constants.colors.secondary}>
+      {loading ? (
+        <Text style={{ color: constants.colors.white }}>Loading products...</Text>
       ) : (
-        <Text>Loading...</Text>
+        <FlatList
+          data={products}
+          keyExtractor={(item) => item.id.toString()}
+          renderItem={({ item }) => (
+            <Div marginTop={constants.spacing.md}>
+              <ProductCard product={item} />
+            </Div>
+          )}
+          ListEmptyComponent={
+            <Text style={{ color: constants.colors.white }}>No products found</Text>
+          }
+        />
       )}
-      <Image source={require("assets/images/prism-studio.png")} style={{ width: 100, height: 100 }} />
-      <Example/>
-    </View>
+    </Div>
   );
 }

@@ -1,6 +1,6 @@
 # Market Core API
 
-#### v-1.0.0
+#### v-1.1.0-modified
 
 **Market Core API** is a comprehensive Laravel-based marketplace API built entirely from scratch over 111+ hours of dedicated development work. This project was developed to enhance my backend development skills through hands-on implementation of a complete e-commerce solution.
 

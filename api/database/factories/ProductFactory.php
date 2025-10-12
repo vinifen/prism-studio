@@ -13,9 +13,10 @@ class ProductFactory extends Factory
     {
         return [
             'category_id' => null,
-            'name' => $this->faker->word(),
+            'name' => $this->faker->words(3, true),
             'stock' => $this->faker->numberBetween(0, 100),
-            'price' => $this->faker->randomFloat(2, 1, 1000),
+            'price' => $this->faker->randomFloat(2, 10, 500),
+            'image_url' => null,
         ];
     }
 }
