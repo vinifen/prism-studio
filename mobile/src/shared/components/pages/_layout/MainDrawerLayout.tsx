@@ -1,15 +1,12 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { TouchableOpacity } from 'react-native'
 import React from 'react'
 import Drawer from 'expo-router/drawer'
 import LogoImage from 'shared/components/ui/LogoImage'
-import { H1 } from 'shared/components/ui/Titles'
-import { Feather } from '@expo/vector-icons';
 import { useRouter } from 'expo-router'
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { DrawerToggleButton } from '@react-navigation/drawer';
-import { Div } from 'shared/components/ui'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { DrawerToggleButton } from '@react-navigation/drawer'
 import { constants } from 'shared/styles/contants'
-import MainDrawerContent from './MainDrawerContent'
+import _MainDrawerContent from './_MainDrawerContent'
 
 export default function MainDrawerLayout() {
   const router = useRouter();
@@ -41,7 +38,7 @@ export default function MainDrawerLayout() {
         ),
       }}
       drawerContent={() => (
-        <MainDrawerContent/>
+        <_MainDrawerContent/>
       )}
     >
       <Drawer.Screen

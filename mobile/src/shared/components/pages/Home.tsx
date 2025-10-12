@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
 import api from 'api/index';
 import { useState } from 'react';
-import { Image, Text, View, StyleSheet } from 'react-native';
-import { GradientText, GradientBorderBox, GradientBackground, Div, PrimaryButton, SecondaryButton } from 'shared/components/ui';
-import { H1 } from '../ui/Titles';
+import { View, StyleSheet, Text, FlatList } from 'react-native';
+import { PrimaryButton, SecondaryButton, ProductCard } from 'shared/components/ui';
 import FormInput from '../ui/FormInput';
 import { useForm } from 'react-hook-form';
+import { ProductType } from 'shared/types/ProductTypes';
+import { constants } from 'shared/styles/contants';
 
 export default function Home() {
   const { 
@@ -16,63 +17,65 @@ export default function Home() {
     mode: "onChange"
   });
 
-  const [data, setData] = useState(null);
+  const [products, setProducts] = useState<ProductType[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await api.get('/');
-      setData(response.data);
-      console.log("Data from API:", response.data);
+      try {
+        const response = await api.get('/api/products');
+        setProducts(response.data.data);
+        console.log("Products from API:", response.data.data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      } finally {
+        setLoading(false);
+      }
     };
     fetchData();
   }, []);
 
   return (
-    <View>
-      <Text>Home</Text>
-      {data ? (
-        <Text>{JSON.stringify(data, null, 2)}</Text>
-      ) : (
-        <Text>Loading...</Text>
-      )}
-      <Image source={require("assets/images/prism-studio.png")} style={{ width: 100, height: 100 }} resizeMode="contain"/>
-      
-      <View>
-        <GradientText style={styles.textStyle}>Hello world</GradientText>
-      </View>
-      <GradientBorderBox
-        width={250}
-        height={130}
-        borderLeftWidth={20}
-        borderTopLeftRadius={20}
-        borderBottomLeftRadius={20}
-        borderWidth={10}
-        backgroundColor="white"
-      >
-        <Text style={{ color: 'black', fontSize: 16 }}>Teste de borda gradiente</Text>
-        <View style={{alignItems: 'flex-end'}}>
-          <GradientText fontSize={30} fontWeight='bold'>Texto </GradientText>
-        </View>
-      </GradientBorderBox>
-      <GradientBackground borderColor='black' borderRightColor='blue' borderRadius={15} borderWidth={5}>
-        <View style={{alignItems: 'center'}}>
-          <GradientText fontSize={20}>Texto </GradientText>
-          </View>
-        <Text style={{ color: 'white' }}>Texto com fundo gradiente</Text>
-      </GradientBackground>
-      <Div backgroundColor='white' borderBottomRightRadius={20} borderColor="blue" padding={10} margin={10} borderRadius={10}>
-        <Text>Conteúdo dentro do Div</Text>
-      </Div>
-      <H1>ASDF</H1>
+    <View style={{ flex: 1, padding: constants.spacing.md }}>
       <FormInput 
         control={control} 
         errors={errors} 
         inputName="example" 
         placeholder="Digite algo aqui..."
       />
-      <PrimaryButton title='BUTTON' onPress={() => console.log('Button pressed')} isDisabled={true}/>
-      <SecondaryButton title='BUTTON' onPress={() => console.log('Button pressed')} isDisabled={true}/>
+      
+      <View style={{ marginTop: constants.spacing.md }}>
+        <PrimaryButton 
+          title='Primary Button' 
+          onPress={() => console.log('Primary pressed')}
+        />
+      </View>
+      
+      <View style={{ marginTop: constants.spacing.sm }}>
+        <SecondaryButton 
+          title='Secondary Button' 
+          onPress={() => console.log('Secondary pressed')}
+        />
+      </View>
 
+      <View style={{ marginTop: constants.spacing.lg, flex: 1 }}>
+        {loading ? (
+          <Text style={{ color: constants.colors.white }}>Carregando produtos...</Text>
+        ) : (
+          <FlatList
+            data={products}
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={({ item }) => (
+              <View style={{ marginBottom: constants.spacing.md }}>
+                <ProductCard product={item} />
+              </View>
+            )}
+            ListEmptyComponent={
+              <Text style={{ color: constants.colors.white }}>Nenhum produto encontrado</Text>
+            }
+          />
+        )}
+      </View>
     </View>
   );
 }

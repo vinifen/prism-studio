@@ -6,6 +6,7 @@ export type FlexProps = {
   alignItems?: 'stretch' | 'flex-start' | 'flex-end' | 'center' | 'baseline';
   alignSelf?: 'auto' | 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
   alignContent?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'space-between' | 'space-around';
+  gap?: number | string;
 };
 
 export function ExtractFlexProps(props: FlexProps) {
@@ -17,6 +18,7 @@ export function ExtractFlexProps(props: FlexProps) {
     alignItems,
     alignSelf,
     alignContent,
+    gap,
   } = props;
 
   return {
@@ -28,6 +30,7 @@ export function ExtractFlexProps(props: FlexProps) {
       alignItems,
       alignSelf,
       alignContent,
+      gap
     },
   };
 }

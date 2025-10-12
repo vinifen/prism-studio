@@ -1,4 +1,4 @@
-import { View, TouchableOpacity, GestureResponderEvent } from 'react-native'
+import { View, TouchableOpacity, GestureResponderEvent, DimensionValue } from 'react-native'
 import React from 'react'
 import GradientBorderBox from '../gradient/GradientBorderBox'
 import GradientText from '../gradient/GradientText'
@@ -10,28 +10,32 @@ type SecondaryButtonProps = {
   onPress: (event: GestureResponderEvent) => void;
   isDisabled?: boolean;
   backgroundColor?: string;
+  width?: DimensionValue;
+  height?: DimensionValue;
 } & DimensionProps;
 
 export default function SecondaryButton(props: SecondaryButtonProps) {
-  const { title, onPress, isDisabled, backgroundColor, ...dimensionProps } = props;
+  const { title, onPress, isDisabled, backgroundColor, width = '100%', height = 35 , ...dimensionProps } = props;
 
   return (
     <TouchableOpacity 
       onPress={onPress} 
       disabled={isDisabled}
       activeOpacity={0.7}
-      style={{ opacity: isDisabled ? 0.5 : 1 }}
+      style={{ opacity: isDisabled ? 0.5 : 1, width: width }}
     >
       <GradientBorderBox
         borderWidth={2}
-        justifyContent='center'
         borderRadius={constants.DEFAULT_RADIUS}
-        paddingHorizontal={constants.spacing.lg}
-        paddingVertical={constants.spacing.md}
         backgroundColor={backgroundColor ? backgroundColor : constants.colors.primary}
+        height={typeof height === 'number' ? height + 4 : height}
         {...dimensionProps}
       >
-        <View style={{alignItems: 'center'}}>
+        <View style={{
+          alignItems: 'center',
+          justifyContent: 'center',
+          flex: 1,
+        }}>
           <GradientText fontSize={constants.fontSize.md} fontWeight="600">
             {title ? title : "Secondary BUTTON"}
           </GradientText>

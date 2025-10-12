@@ -1,4 +1,4 @@
-import { TouchableOpacity, GestureResponderEvent, Text } from 'react-native'
+import { TouchableOpacity, GestureResponderEvent, Text, DimensionValue } from 'react-native'
 import React from 'react'
 import GradientBorderBox from '../gradient/GradientBorderBox'
 import GradientBackground from '../gradient/GradientBackground'
@@ -9,25 +9,28 @@ type PrimaryButtonProps = {
   title: string;
   onPress: (event: GestureResponderEvent) => void;
   isDisabled?: boolean;
+  width?: DimensionValue;
+  height?: DimensionValue;
 } & DimensionProps;
 
 export default function PrimaryButton(props: PrimaryButtonProps) {
-  const { title, onPress, isDisabled, ...dimensionProps } = props;
+  const { title, onPress, isDisabled, width = '100%', height = 40, ...dimensionProps } = props;
 
   return (
-    <TouchableOpacity 
-      onPress={onPress} 
+    <TouchableOpacity
+      onPress={onPress}
       disabled={isDisabled}
       activeOpacity={0.7}
-      style={{ opacity: isDisabled ? 0.5 : 1 }}
+      style={{ opacity: isDisabled ? 0.5 : 1, width: width}}
     >
       <GradientBorderBox 
-        borderWidth={2} 
+        borderWidth={2}
         borderRadius={constants.DEFAULT_RADIUS}
+        height={typeof height === 'number' ? height + 4 : height}
       >
         <GradientBackground
-          paddingHorizontal={constants.spacing.lg}
-          paddingVertical={constants.spacing.md}
+          width={'100%'}
+          height={'100%'}
           justifyContent='center'
           alignItems='center'
           {...dimensionProps}

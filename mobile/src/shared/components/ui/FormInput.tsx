@@ -1,6 +1,6 @@
 import React from 'react';
 import { Controller } from 'react-hook-form';
-import { TextInput, TextInputProps, StyleSheet, Text, StyleProp, TextStyle, View } from 'react-native';
+import { TextInput, TextInputProps, Text, StyleProp, TextStyle, View, DimensionValue } from 'react-native';
 import { constants } from 'shared/styles/contants';
 import GradientText from './gradient/GradientText';
 import GradientBorderBox from './gradient/GradientBorderBox';
@@ -20,6 +20,8 @@ type DefaultInputType = TextInputProps & {
   numberOfLines?: number;
   multiline?: boolean;
   backgroundColor?: string;
+  width?: DimensionValue;
+  height?: DimensionValue;
 };
 
 
@@ -34,27 +36,30 @@ export default function FormInput({
   maxHeight,
   textAlignVertical = "center",
   textAlign = "center",
-  paddingLeft = 0,
   numberOfLines = 1,
   multiline = false,
   backgroundColor = constants.colors.primary,
+  width = '100%',
+  height = 40,
   ...props
 }: DefaultInputType) {
 
   return (
-    <GradientBorderBox backgroundColor={backgroundColor}>
-      <Controller
-        key={`${inputName}`}
-        control={control}
-        name={inputName}
-        render={({ field: { onChange, onBlur, value } }) => (
-          <View style={{ justifyContent: 'center' }}>
+    <View style={{ width }}>
+      <GradientBorderBox
+        borderWidth={2}
+        backgroundColor={backgroundColor}
+        height={typeof height === 'number' ? height + 4 : height}
+      >
+        <Controller
+          key={`${inputName}`}
+          control={control}
+          name={inputName}
+          render={({ field: { onChange, onBlur, value } }) => (
             <View style={{ 
               position: 'relative',
-              borderWidth: 1,
-              borderColor: constants.colors.secundary,
-              borderRadius: constants.borderRadius.md,
-              backgroundColor: backgroundColor,
+              flex: 1,
+              justifyContent: 'center',
             }}>
               <TextInput
                 value={value}
@@ -70,9 +75,6 @@ export default function FormInput({
                     maxHeight,
                     textAlignVertical: textAlignVertical as any,
                     textAlign: textAlign as any,
-                    paddingLeft,
-                    paddingHorizontal: constants.spacing.md,
-                    paddingVertical: constants.spacing.sm,
                     backgroundColor: 'transparent',
                     color: constants.colors.white,
                     fontSize: constants.fontSize.md,
@@ -103,20 +105,20 @@ export default function FormInput({
                 </View>
               )}
             </View>
-            {errors?.[inputName] && (
-              <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: constants.spacing.xs }}>
-                <Text style={{ 
-                  color: constants.validation.errorPrimary, 
-                  fontSize: constants.fontSize.xs,
-                  textAlign: 'center',
-                }}>
-                  {errors[inputName].message || 'Campo inválido'}
-                </Text>
-              </View>
-            )}
-          </View>
-        )}
-      />
-    </GradientBorderBox>
+          )}
+        />
+      </GradientBorderBox>
+      {errors?.[inputName] && (
+        <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: constants.spacing.xs }}>
+          <Text style={{ 
+            color: constants.validation.errorPrimary, 
+            fontSize: constants.fontSize.xs,
+            textAlign: 'center',
+          }}>
+            {errors[inputName].message || 'Campo inválido'}
+          </Text>
+        </View>
+      )}
+    </View>
   );
 }
