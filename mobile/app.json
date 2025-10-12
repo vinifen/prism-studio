@@ -2,7 +2,7 @@
   "expo": {
     "name": "prism-studio",
     "slug": "prism-studio",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/prism-studio.png",
     "scheme": "prismstudio",

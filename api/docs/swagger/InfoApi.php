@@ -6,7 +6,7 @@ use OpenApi\Annotations as OA;
 
 /**
  * @OA\Info(
- *     version="1.0.0",
+ *     version="1.1.0-modified",
  *     title="MarketCore API Documentation",
  *     description="MarketCore API is an api made to serve a digital market.",
  * ),
