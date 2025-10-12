@@ -18,8 +18,8 @@ export default function SecondaryButton(props: SecondaryButtonProps) {
   const { title, onPress, isDisabled, backgroundColor, width = '100%', height = 35 , ...dimensionProps } = props;
 
   return (
-    <TouchableOpacity 
-      onPress={onPress} 
+    <TouchableOpacity
+      onPress={onPress}
       disabled={isDisabled}
       activeOpacity={0.7}
       style={{ opacity: isDisabled ? 0.5 : 1, width: width }}
