@@ -10,7 +10,7 @@ try {
 }
 
 const resolvedIp = customIp || "10.0.2.2";
-const baseURL = `http://${resolvedIp}:8010/`;
+const baseURL = `http://${resolvedIp}:8010`;
 
 const api = axios.create({ baseURL });
 
