@@ -1,10 +1,8 @@
-import { View, Text } from 'react-native'
+import LoginUser from 'shared/components/pages/login/LoginUser'
 import React from 'react'
 
 export default function _screen() {
   return (
-    <View>
-      <Text>Login</Text>
-    </View>
+    <LoginUser />
   )
 }

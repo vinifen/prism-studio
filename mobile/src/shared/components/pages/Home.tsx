@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import api from 'api/index';
 import { useState } from 'react';
-import { View, StyleSheet, Text, FlatList } from 'react-native';
-import { PrimaryButton, SecondaryButton, ProductCard } from 'shared/components/ui';
-import FormInput from '../ui/FormInput';
+import { Text, FlatList } from 'react-native';
+import { ProductCard, Div } from 'shared/components/ui';
 import { useForm } from 'react-hook-form';
 import { ProductType } from 'shared/types/ProductTypes';
 import { constants } from 'shared/styles/contants';
@@ -36,53 +35,23 @@ export default function Home() {
   }, []);
 
   return (
-    <View style={{ flex: 1, padding: constants.spacing.md }}>
-      <FormInput 
-        control={control} 
-        errors={errors} 
-        inputName="example" 
-        placeholder="Digite algo aqui..."
-      />
-      
-      <View style={{ marginTop: constants.spacing.md }}>
-        <PrimaryButton 
-          title='Primary Button' 
-          onPress={() => console.log('Primary pressed')}
-        />
-      </View>
-      
-      <View style={{ marginTop: constants.spacing.sm }}>
-        <SecondaryButton 
-          title='Secondary Button' 
-          onPress={() => console.log('Secondary pressed')}
-        />
-      </View>
-
-      <View style={{ marginTop: constants.spacing.lg, flex: 1 }}>
+    <Div flex={1} paddingHorizontal={constants.spacing.md} backgroundColor={constants.colors.secondary}>
         {loading ? (
-          <Text style={{ color: constants.colors.white }}>Carregando produtos...</Text>
+          <Text style={{ color: constants.colors.white }}>Loading products...</Text>
         ) : (
           <FlatList
             data={products}
             keyExtractor={(item) => item.id.toString()}
             renderItem={({ item }) => (
-              <View style={{ marginBottom: constants.spacing.md }}>
+              <Div marginTop={constants.spacing.md}>
                 <ProductCard product={item} />
-              </View>
+              </Div>
             )}
             ListEmptyComponent={
-              <Text style={{ color: constants.colors.white }}>Nenhum produto encontrado</Text>
+              <Text style={{ color: constants.colors.white }}>No products found</Text>
             }
           />
         )}
-      </View>
-    </View>
+    </Div>
   );
 }
-
-const styles = StyleSheet.create({
-  textStyle: {
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
-});

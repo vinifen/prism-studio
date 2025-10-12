@@ -1,10 +1,8 @@
-import { View, Text } from 'react-native'
 import React from 'react'
+import RegisterUser from 'shared/components/pages/register/RegisterUser'
 
 export default function _screen() {
   return (
-    <View>
-      <Text>Register</Text>
-    </View>
+    <RegisterUser/>
   )
 }

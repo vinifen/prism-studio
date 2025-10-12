@@ -12,7 +12,7 @@ export const constants = {
 
   colors: {
     primary: "#222324",
-    secundary: "#2E2F30",
+    secondary: "#2E2F30",
     white: "#FFFFFF",
     gradient: { 
       colors: ["#FFFFFF", "#D4AA8C", "#A5BF53", "#AE8436", "#A91919"],
