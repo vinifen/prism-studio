@@ -1,12 +1,25 @@
-import { Text } from 'react-native'
-import React from 'react'
-import { constants } from 'shared/styles/contants'
-import Div from 'shared/components/ui/Div'
+import { ScrollView } from "react-native";
+import React from "react";
+import _LoginUserForm from "./_LoginUserForm";
+import { H1 } from "shared/components/ui/Titles";
+import { Div } from "shared/components/ui";
+import { constants } from "shared/styles/contants";
 
 export default function LoginUser() {
+
   return (
-    <Div flex={1} backgroundColor={constants.colors.primary}>
-      <Text>LoginUser</Text>
-    </Div>
-  )
+    <ScrollView
+      style={{ flex: 1, backgroundColor: constants.colors.primary }}
+      contentContainerStyle={{
+        paddingHorizontal: "10%",
+      }}
+      keyboardShouldPersistTaps="handled"
+    >
+      <Div justifyContent="center" alignItems="center" marginVertical={50}>
+        <H1>Login to Your Account</H1>
+      </Div>
+
+      <_LoginUserForm />
+    </ScrollView>
+  );
 }

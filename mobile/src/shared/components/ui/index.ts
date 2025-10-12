@@ -6,6 +6,8 @@ import { H1, H2, H3, H4 } from './Titles';
 import SecondaryButton from './bottons/SecondaryButton';
 import PrimaryButton from './bottons/PrimaryButton';
 import ProductCard from './ProductCard';
+import RememberMe from './RememberMe';
+import FormInput from './FormInput';
 
 export {
   GradientText,
@@ -14,6 +16,8 @@ export {
   PrimaryButton,
   SecondaryButton,
   ProductCard,
+  RememberMe,
+  FormInput,
   Div,
   H1,
   H2,

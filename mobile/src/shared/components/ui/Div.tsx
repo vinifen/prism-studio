@@ -1,4 +1,4 @@
-import { View, ViewStyle } from 'react-native'
+import { View, ViewStyle, StyleProp } from 'react-native'
 import React, { ReactNode } from 'react'
 import { DimensionProps } from 'shared/types/styles/DimensionTypes'
 import { FlexProps } from 'shared/types/styles/FlexTypes'
@@ -9,7 +9,7 @@ import { BackgroundProps } from 'shared/types/styles/BackgroundTypes'
 
 type DivProps = {
   children?: ReactNode;
-  style?: ViewStyle | ViewStyle[];
+  style?: StyleProp<ViewStyle>;
 } & DimensionProps & FlexProps & MarginProps & PaddingProps & BorderProps & BackgroundProps;
 
 
