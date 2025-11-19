@@ -1,10 +1,8 @@
-import { View, Text } from 'react-native'
 import React from 'react'
+import ProfileUser from 'shared/components/pages/profile/ProfileUser'
 
 export default function _screen() {
   return (
-    <View>
-      <Text>Profile</Text>
-    </View>
+    <ProfileUser />
   )
 }
