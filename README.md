@@ -1,6 +1,6 @@
 # 🎨 Prism Studio
 
-#### v-0.1.0-alpha
+#### v-1.0.0-beta
 
 ## 📱 About the project
 
@@ -14,7 +14,7 @@ For the backend, I'm using my [MarketCore API](https://github.com/vinifen/market
 - [x] Product List
 - [ ] Product catalog browsing with categories
 - [ ] Shopping cart management
-- [ ] User profile management
+- [x] User profile management
 - [ ] Order logic
 - [ ] Product search functionality
 
@@ -81,7 +81,7 @@ This is the database schema from my MarketCore API backend that Prism Studio wil
 ### 🔐 Week 3: Authentication System
 - [x] Progress on login and registration system
 - [ ] Possibly add admin features (not priority)
-- [ ] User authentication flow completion
+- [x] User authentication flow completion
 
 ### 👤 Week 4: Admin & Products Start
 - [ ] Begin admin panel development (not priority)
