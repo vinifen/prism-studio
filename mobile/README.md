@@ -1,6 +1,6 @@
 # 📱 Prism Studio Mobile
 
-# v-0.1.0-alpha
+# v-1.0.0.-bete
 
 React Native mobile app for an art supplies e-commerce platform built with Expo Router and TypeScript.
 
