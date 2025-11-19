@@ -10,10 +10,12 @@ import { Div, FormInput, PrimaryButton } from "shared/components/ui";
 import { constants } from "shared/styles/contants";
 import api from "api/index";
 import { handleApiError } from "shared/utils/errorHandler";
+import { useAuthStore } from "shared/stores/authStore";
 
 export default function _LoginUserForm({ style }: { style?: StyleProp<ViewStyle> }) {
 
   const router = useRouter();
+  const login = useAuthStore((state) => state.login);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   
@@ -36,7 +38,9 @@ export default function _LoginUserForm({ style }: { style?: StyleProp<ViewStyle>
         password: data.password
       });
 
-      console.log('Login Response: ', response);
+      const { user, token } = response.data.data;
+      
+      login(user, token);
       
       router.push('/');
     } catch (error: any) {

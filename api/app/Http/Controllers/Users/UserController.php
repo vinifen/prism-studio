@@ -51,7 +51,11 @@ class UserController extends Controller
         $user = $this->findModelOrFail(User::class, $id);
         $this->authorize('update', $user);
 
-        $result = $userService->update($user, $request->validated(), app(AuthService::class));
+        $result = $userService->update(
+            $user, 
+            $request->validated(), 
+            app(AuthService::class)
+        );
 
         $result->load(['cart', 'addresses']);
         return ApiResponse::success(new UserResource($result));
