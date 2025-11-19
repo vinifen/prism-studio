@@ -17,6 +17,8 @@ type AuthState = {
   token: string | null;
   login: (userData: User, authToken: string) => void;
   logout: () => void;
+  updateUser: (userData: User) => void;
+  deleteUser: () => void;
 };
 
 export const useAuthStore = create<AuthState>()(
@@ -34,6 +36,20 @@ export const useAuthStore = create<AuthState>()(
       },
 
       logout: () => {
+        delete api.defaults.headers.common['Authorization'];
+        set({
+          user: null,
+          token: null,
+        });
+      },
+
+      updateUser: (userData: User) => {
+        set({
+          user: userData,
+        });
+      },
+
+      deleteUser: () => {
         delete api.defaults.headers.common['Authorization'];
         set({
           user: null,

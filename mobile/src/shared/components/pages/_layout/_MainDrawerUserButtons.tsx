@@ -62,11 +62,6 @@ export default function _MainDrawerUserButtons() {
             />
             
             <SecondaryButton 
-              title="Account"
-              onPress={() => router.push('/')}
-            />
-            
-            <SecondaryButton 
               title="My Profile"
               onPress={() => router.push(`/user/${user.id}/profile`)}
             />
